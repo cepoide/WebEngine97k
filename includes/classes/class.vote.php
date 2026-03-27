@@ -50,7 +50,11 @@ class Vote {
 	
 	public function setUserid($userid) {
 		if(!check_value($userid)) throw new Exception(lang('error_23', true));
-		if(!Validator::UnsignedNumber($userid)) throw new Exception(lang('error_23', true));
+		if(in_array(config('server_files', true), ['97k_sql', '97k_mysql'])) {
+			if(!Validator::AlphaNumeric($userid)) throw new Exception(lang('error_23', true));
+		} else {
+			if(!Validator::UnsignedNumber($userid)) throw new Exception(lang('error_23', true));
+		}
 		
 		$accountInfo = $this->common->accountInformation($userid);
 		if(!is_array($accountInfo)) throw new Exception(lang('error_23', true));

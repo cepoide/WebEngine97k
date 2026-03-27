@@ -52,6 +52,10 @@ class CastleSiege {
 		
 		// set configs
 		$this->_active = $cfg['active'];
+
+		if(in_array(config('server_files', true), ['97k_sql', '97k_mysql'])) {
+			$this->_active = false;
+		}
 		$this->_hideIdle = $cfg['hide_idle'];
 		$this->_liveData = $cfg['live_data'];
 		$this->_showCastleOwner = $cfg['show_castle_owner'];
@@ -216,6 +220,7 @@ class CastleSiege {
 	}
 	
 	public function updateSiegeCache() {
+		if(!$this->_active) return;
 		$this->_initDatabase();
 		$this->_liveData = true;
 		$this->_cacheSiegeData();

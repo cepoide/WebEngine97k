@@ -451,6 +451,7 @@ class Character {
 	}
 	
 	public function CharacterClearSkillTree() {
+		if(in_array(config('server_files', true), ['97k_sql', '97k_mysql'])) throw new Exception("This feature is not supported by your server files.");
 		// filters
 		if(!check_value($this->_username)) throw new Exception(lang('error_21'));
 		if(!check_value($this->_character)) throw new Exception(lang('error_21'));
@@ -747,6 +748,7 @@ class Character {
 	}
 	
 	public function getMasterLevelInfo($character_name) {
+		if(in_array(config('server_files', true), ['97k_sql', '97k_mysql'])) return;
 		if(!check_value($character_name)) return;
 		if(!$this->CharacterExists($character_name)) return;
 		$CharInfo = $this->muonline->query_fetch_single("SELECT * FROM "._TBL_MASTERLVL_." WHERE "._CLMN_ML_NAME_." = ?", array($character_name));

@@ -4,7 +4,7 @@
  * https://webenginecms.org/
  * 
  * @version 1.2.6
- * @author Lautaro Angelico <http://lautaroangelico.com/>
+ * @author Lautaro Angelico <http://lautaroangelico.com/> - Adaptacion a 97k por Cepoide <https://discord.com/users/629812608777715722>
  * @copyright (c) 2013-2025 Lautaro Angelico, All Rights Reserved
  * 
  * Licensed under the MIT license
@@ -14,12 +14,12 @@
 define('_TBL_MI_', 'MEMB_INFO');
 	define('_CLMN_USERNM_', 'memb___id');
 	define('_CLMN_PASSWD_', 'memb__pwd');
-	define('_CLMN_MEMBID_', 'memb_guid');
+	define('_CLMN_MEMBID_', 'memb___id');
 	define('_CLMN_EMAIL_', 'mail_addr');
 	define('_CLMN_BLOCCODE_', 'bloc_code');
 	define('_CLMN_SNONUMBER_', 'sno__numb');
 	define('_CLMN_MEMBNAME_', 'memb_name');
-	define('_CLMN_CTLCODE_', 'ctl1_code');
+	define('_CLMN_CTLCODE_', 'AccountLevel');
 
 define('_TBL_MS_', 'MEMB_STAT');
 	define('_CLMN_CONNSTAT_', 'ConnectStat');
@@ -46,7 +46,7 @@ define('_TBL_CHR_', 'Character');
 	define('_CLMN_CHR_STAT_AGI_', 'Dexterity');
 	define('_CLMN_CHR_STAT_VIT_', 'Vitality');
 	define('_CLMN_CHR_STAT_ENE_', 'Energy');
-	define('_CLMN_CHR_STAT_CMD_', 'Leadership');
+	define('_CLMN_CHR_STAT_CMD_', 'Strength');
 	define('_CLMN_CHR_PK_KILLS_', 'PkCount');
 	define('_CLMN_CHR_PK_LEVEL_', 'PkLevel');
 	define('_CLMN_CHR_PK_TIME_', 'PkTime');
@@ -57,14 +57,14 @@ define('_TBL_CHR_', 'Character');
 	define('_CLMN_CHR_INV_', 'Inventory');
 	define('_CLMN_CHR_QUEST_', 'Quest');
 
-define('_TBL_MASTERLVL_', 'MasterSkillTree');
+define('_TBL_MASTERLVL_', 'Character');
 	define('_CLMN_ML_NAME_', 'Name');
 	define('_CLMN_ML_LVL_', 'MasterLevel');
 	define('_CLMN_ML_EXP_', 'MasterExperience');
 	define('_CLMN_ML_POINT_', 'MasterPoint');
 	define('_CLMN_ML_SKILL_', 'MasterSkill');
 
-define('_TBL_MUCASTLE_DATA_', 'MuCastle_DATA');
+define('_TBL_MUCASTLE_DATA_', 'Character');
 	define('_CLMN_MCD_GUILD_OWNER_', 'OWNER_GUILD');
 	define('_CLMN_MCD_MONEY_', 'MONEY');
 	define('_CLMN_MCD_TRC_', 'TAX_RATE_CHAOS');
@@ -86,18 +86,18 @@ define('_TBL_GUILDMEMB_', 'GuildMember');
 	define('_CLMN_GUILDMEMB_LEVEL_', 'G_Level');
 	define('_CLMN_GUILDMEMB_STATUS_', 'G_Status');
 	
-define('_TBL_MUCASTLE_RS_', 'MuCastle_REG_SIEGE');
+define('_TBL_MUCASTLE_RS_', 'Character');
 	define('_CLMN_MCRS_GUILD_', 'REG_SIEGE_GUILD');
 	define('_CLMN_MCRS_SEQNUM_', 'SEQ_NUM');
 	
-define('_TBL_MUCASTLE_SGL_', 'MuCastle_SIEGE_GUILDLIST');
+define('_TBL_MUCASTLE_SGL_', 'Character');
 	define('_CLMN_MCSGL_MAPSRVGRP_', 'MAP_SVR_GROUP');
 	define('_CLMN_MCSGL_GNAME_', 'GUILD_NAME');
 	define('_CLMN_MCSGL_GID_', 'GUILD_ID');
 	define('_CLMN_MCSGL_GINV_', 'GUILD_INVOLVED');
 	define('_CLMN_MCSGL_GSCORE_', 'GUILD_SCORE');
 	
-define('_TBL_GENS_', 'Gens_Rank');
+define('_TBL_GENS_', 'Character');
 	define('_CLMN_GENS_NAME_', 'Name');
 	define('_CLMN_GENS_TYPE_', 'Family');
 	define('_CLMN_GENS_POINT_', 'Contribution');

@@ -14,6 +14,8 @@
 // File Name
 $file_name = basename(__FILE__);
 
+if(in_array(config('server_files', true), ['97k_sql', '97k_mysql'])) return;
+
 // Castle Siege
 $castleSiege = new CastleSiege();
 $castleSiege->updateSiegeCache();

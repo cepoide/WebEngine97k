@@ -66,6 +66,13 @@ class Rankings {
 				$this->_rankingsMenu[] = array($menuLink[0], $menuLink[1], true);
 			}
 		}
+
+		if(in_array($this->serverFiles, ['97k_sql', '97k_mysql'])) {
+			$GLOBALS['mconfig']['rankings_enable_master'] = 0;
+			$GLOBALS['mconfig']['rankings_enable_gens'] = 0;
+			$GLOBALS['mconfig']['combine_level_masterlevel'] = 0;
+			$GLOBALS['mconfig']['guild_score_formula'] = 1;
+		}
 	}
    
 	public function UpdateRankingCache($type) {
@@ -175,6 +182,7 @@ class Rankings {
 	}
 	
 	private function _masterlevelRanking() {
+		if(in_array($this->serverFiles, ['97k_sql', '97k_mysql'])) return;
 		$this->mu = Connection::Database('MuOnline');
 		
 		if(_TBL_CHR_ == _TBL_MASTERLVL_) {
@@ -323,6 +331,8 @@ class Rankings {
 	private function _getLevelRankingData($combineMasterLevel=false) {
 		$this->mu = Connection::Database('MuOnline');
 		
+		if(in_array($this->serverFiles, ['97k_sql', '97k_mysql'])) $combineMasterLevel = false;
+		
 		// level only (no master level)
 		if(!$combineMasterLevel) {
 			$result = $this->mu->query_fetch("SELECT TOP ".$this->_results." "._CLMN_CHR_NAME_.","._CLMN_CHR_CLASS_.","._CLMN_CHR_LVL_.","._CLMN_CHR_MAP_." FROM "._TBL_CHR_." WHERE "._CLMN_CHR_NAME_." NOT IN(".$this->_rankingsExcludeChars().") ORDER BY "._CLMN_CHR_LVL_." DESC");
@@ -365,6 +375,8 @@ class Rankings {
 	private function _getResetRankingData($combineMasterLevel=false) {
 		$this->mu = Connection::Database('MuOnline');
 		
+		if(in_array($this->serverFiles, ['97k_sql', '97k_mysql'])) $combineMasterLevel = false;
+		
 		// level only (no master level)
 		if(!$combineMasterLevel) {
 			$result = $this->mu->query_fetch("SELECT TOP ".$this->_results." "._CLMN_CHR_NAME_.","._CLMN_CHR_CLASS_.","._CLMN_CHR_RSTS_.","._CLMN_CHR_LVL_.","._CLMN_CHR_MAP_." FROM "._TBL_CHR_." WHERE "._CLMN_CHR_NAME_." NOT IN(".$this->_rankingsExcludeChars().") AND "._CLMN_CHR_RSTS_." > 0 ORDER BY "._CLMN_CHR_RSTS_." DESC, "._CLMN_CHR_LVL_." DESC");
@@ -388,6 +400,8 @@ class Rankings {
 	
 	private function _getKillersRankingData($combineMasterLevel=false) {
 		$this->mu = Connection::Database('MuOnline');
+		
+		if(in_array($this->serverFiles, ['97k_sql', '97k_mysql'])) $combineMasterLevel = false;
 		
 		// level only (no master level)
 		if(!$combineMasterLevel) {

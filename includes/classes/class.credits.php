@@ -77,7 +77,11 @@ class CreditSystem {
 	 * @throws Exception
 	 */
 	private function _setUserid($input) {
-		if(!Validator::UnsignedNumber($input)) throw new Exception(lang('error_67'));
+		if(in_array(config('server_files', true), ['97k_sql', '97k_mysql'])) {
+			if(!Validator::AlphaNumeric($input)) throw new Exception(lang('error_67'));
+		} else {
+			if(!Validator::UnsignedNumber($input)) throw new Exception(lang('error_67'));
+		}
 		$this->_identifier = $input;
 	}
 	

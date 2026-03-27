@@ -219,7 +219,11 @@ class Account extends common {
 		$userid = $user_id;
 		$authcode = $auth_code;
 		
-		if(!Validator::UnsignedNumber($userid)) throw new Exception(lang('error_25',true));
+		if(in_array($this->_serverFiles, ['97k_sql', '97k_mysql'])) {
+			if(!Validator::AlphaNumeric($userid)) throw new Exception(lang('error_25',true));
+		} else {
+			if(!Validator::UnsignedNumber($userid)) throw new Exception(lang('error_25',true));
+		}
 		if(!Validator::UnsignedNumber($authcode)) throw new Exception(lang('error_25',true));
 		
 		$result = $this->memuonline->query_fetch_single("SELECT * FROM ".WEBENGINE_PASSCHANGE_REQUEST." WHERE user_id = ?", array($userid));
@@ -314,7 +318,11 @@ class Account extends common {
 		if(!check_value($key)) throw new Exception(lang('error_31',true));
 		
 		$user_id = $ui; // user id
-		if(!Validator::UnsignedNumber($user_id)) throw new Exception(lang('error_31',true));
+		if(in_array($this->_serverFiles, ['97k_sql', '97k_mysql'])) {
+			if(!Validator::AlphaNumeric($user_id)) throw new Exception(lang('error_31',true));
+		} else {
+			if(!Validator::UnsignedNumber($user_id)) throw new Exception(lang('error_31',true));
+		}
 		
 		$user_email = $ue; // email address
 		if(!$this->emailExists($user_email)) throw new Exception(lang('error_31',true));
@@ -385,7 +393,11 @@ class Account extends common {
 	
 	public function changeEmailVerificationProcess($encodedId, $newEmail, $encryptedKey) {
 		$userId = $encodedId;
-		if(!Validator::UnsignedNumber($userId)) throw new Exception(lang('error_21',true));
+		if(in_array($this->_serverFiles, ['97k_sql', '97k_mysql'])) {
+			if(!Validator::AlphaNumeric($userId)) throw new Exception(lang('error_21',true));
+		} else {
+			if(!Validator::UnsignedNumber($userId)) throw new Exception(lang('error_21',true));
+		}
 		if(!Validator::Email($newEmail)) throw new Exception(lang('error_21',true));
 		
 		# check if email already in use

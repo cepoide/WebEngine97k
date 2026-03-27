@@ -98,7 +98,11 @@ class common {
 	}
 
 	public function accountInformation($id) {
-		if(!Validator::Number($id)) return;
+		if(in_array($this->_serverFiles, ['97k_sql', '97k_mysql'])) {
+			if(!Validator::AlphaNumeric($id)) return;
+		} else {
+			if(!Validator::Number($id)) return;
+		}
 		$result = $this->memuonline->query_fetch_single("SELECT * FROM "._TBL_MI_." WHERE "._CLMN_MEMBID_." = ?", array($id));
 		if(is_array($result)) return $result;
 		return;
@@ -113,7 +117,11 @@ class common {
 	}
 
 	public function changePassword($id,$username,$new_password) {
-		if(!Validator::UnsignedNumber($id)) return;
+		if(in_array($this->_serverFiles, ['97k_sql', '97k_mysql'])) {
+			if(!Validator::AlphaNumeric($id)) return;
+		} else {
+			if(!Validator::UnsignedNumber($id)) return;
+		}
 		if(!Validator::UsernameLength($username)) return;
 		if(!Validator::AlphaNumeric($username)) return;
 		if(!Validator::PasswordLength($new_password)) return;
@@ -210,7 +218,11 @@ class common {
 
 	public function blockAccount($userid) {
 		if(!check_value($userid)) return;
-		if(!Validator::UnsignedNumber($userid)) return;
+		if(in_array($this->_serverFiles, ['97k_sql', '97k_mysql'])) {
+			if(!Validator::AlphaNumeric($userid)) return;
+		} else {
+			if(!Validator::UnsignedNumber($userid)) return;
+		}
 		$result = $this->memuonline->query("UPDATE "._TBL_MI_." SET "._CLMN_BLOCCODE_." = ? WHERE "._CLMN_MEMBID_." = ?", array(1, $userid));
 		if($result) return true;
 		return;
@@ -312,7 +324,11 @@ class common {
 	}
 	
 	public function updateEmail($userid, $newemail) {
-		if(!Validator::UnsignedNumber($userid)) return;
+		if(in_array($this->_serverFiles, ['97k_sql', '97k_mysql'])) {
+			if(!Validator::AlphaNumeric($userid)) return;
+		} else {
+			if(!Validator::UnsignedNumber($userid)) return;
+		}
 		if(!Validator::Email($newemail)) return;
 		$result = $this->memuonline->query("UPDATE "._TBL_MI_." SET "._CLMN_EMAIL_." = ? WHERE "._CLMN_MEMBID_." = ?", array($newemail, $userid));
 		if($result) return true;
