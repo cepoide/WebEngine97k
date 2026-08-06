@@ -3,12 +3,12 @@
  * WebEngine CMS
  * https://webenginecms.org/
  * 
- * @version 1.2.6
- * @author Lautaro Angelico <http://lautaroangelico.com/>
- * @copyright (c) 2013-2025 Lautaro Angelico, All Rights Reserved
+ * @version 1.2.7
+ * @author Lautaro Angelico <https://lautaroangelico.com/>
+ * @copyright (c) 2013-2026 Lautaro Angelico, All Rights Reserved
  * 
  * Licensed under the MIT license
- * http://opensource.org/licenses/MIT
+ * https://opensource.org/licenses/MIT
  */
 
 define('_TBL_MI_', 'MEMB_INFO');
@@ -198,6 +198,11 @@ $custom['character_class'] = array(
 	227 => array('Alchemic Master', 'ALMTR', 'alc.jpg', 'base_stats' => array('str' => 15, 'agi' => 20, 'vit' => 23, 'ene' => 15, 'cmd' => 0), 'class_group' => 224),
 	231 => array('Alchemic Force', 'ALFC', 'alc.jpg', 'base_stats' => array('str' => 15, 'agi' => 20, 'vit' => 23, 'ene' => 15, 'cmd' => 0), 'class_group' => 224),
 	239 => array('Creator', 'CRE', 'alc.jpg', 'base_stats' => array('str' => 15, 'agi' => 20, 'vit' => 23, 'ene' => 15, 'cmd' => 0), 'class_group' => 224),
+	240 => array('Crusader', 'CRU', 'cru.jpg', 'base_stats' => array('str' => 26, 'agi' => 18, 'vit' => 19, 'ene' => 20, 'cmd' => 0), 'class_group' => 240),
+	241 => array('Impact Crusader', 'ICRU', 'cru.jpg', 'base_stats' => array('str' => 26, 'agi' => 18, 'vit' => 19, 'ene' => 20, 'cmd' => 0), 'class_group' => 240),
+	243 => array('Master Paladin', 'MPAL', 'cru.jpg', 'base_stats' => array('str' => 26, 'agi' => 18, 'vit' => 19, 'ene' => 20, 'cmd' => 0), 'class_group' => 240),
+	247 => array('Sacred Paladin', 'SPAL', 'cru.jpg', 'base_stats' => array('str' => 26, 'agi' => 18, 'vit' => 19, 'ene' => 20, 'cmd' => 0), 'class_group' => 240),
+	255 => array('Templar Commander', 'TCOM', 'cru.jpg', 'base_stats' => array('str' => 26, 'agi' => 18, 'vit' => 19, 'ene' => 20, 'cmd' => 0), 'class_group' => 240),
 );
 
 /*
@@ -219,6 +224,7 @@ $custom['rankings_classgroup_filter'] = array(
 	192 => 'rankings_filter_14',
 	208 => 'rankings_filter_15',
 	224 => 'rankings_filter_16',
+	240 => 'rankings_filter_17',
 );
 
 /*
@@ -372,6 +378,8 @@ $custom['map_list'] = array(
 	141 => 'Tormenta Island',
 	142 => 'Twisted Karutan',
 	143 => 'Kardamahal Underground Temple',
+	144 => 'Swamp of Destruction',
+	145 => 'Aquilas Temple',
 );
 
 /*

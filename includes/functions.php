@@ -3,12 +3,12 @@
  * WebEngine CMS
  * https://webenginecms.org/
  * 
- * @version 1.2.6
- * @author Lautaro Angelico <http://lautaroangelico.com/>
- * @copyright (c) 2013-2025 Lautaro Angelico, All Rights Reserved
+ * @version 1.2.7
+ * @author Lautaro Angelico <https://lautaroangelico.com/>
+ * @copyright (c) 2013-2026 Lautaro Angelico, All Rights Reserved
  * 
  * Licensed under the MIT license
- * http://opensource.org/licenses/MIT
+ * https://opensource.org/licenses/MIT
  */
 
 function check_value($value) {
@@ -474,7 +474,7 @@ function getCountryCodeFromIp($ip) {
     curl_setopt($handle, CURLOPT_URL, $api);
     curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
     $json = curl_exec($handle);
-    curl_close($handle);
+    unset($handle);
     if(!check_value($json)) return;
     $result = json_decode($json, true);
 	if(!is_array($result)) return;

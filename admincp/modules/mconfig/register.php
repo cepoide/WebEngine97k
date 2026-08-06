@@ -3,12 +3,12 @@
  * WebEngine CMS
  * https://webenginecms.org/
  * 
- * @version 1.2.6
- * @author Lautaro Angelico <http://lautaroangelico.com/>
- * @copyright (c) 2013-2025 Lautaro Angelico, All Rights Reserved
+ * @version 1.2.7
+ * @author Lautaro Angelico <https://lautaroangelico.com/>
+ * @copyright (c) 2013-2026 Lautaro Angelico, All Rights Reserved
  * 
  * Licensed under the MIT license
- * http://opensource.org/licenses/MIT
+ * https://opensource.org/licenses/MIT
  */
 
 echo '<h2>Registration Settings</h2>';
@@ -74,7 +74,7 @@ loadModuleConfigs('register');
 			</td>
 		</tr>
 		<tr>
-			<th>Email Verification<br/><span>If enabled, the user will receive an email with a verification link. The accout will not be created if the email is not verified.</span></th>
+			<th>Email Verification<br/><span>If enabled, the user will receive an email with a verification link. The account will not be created if the email is not verified.</span></th>
 			<td>
 				<?php enabledisableCheckboxes('setting_5',mconfig('verify_email'),'Enabled','Disabled'); ?>
 			</td>

@@ -3,12 +3,12 @@
  * WebEngine CMS
  * https://webenginecms.org/
  * 
- * @version 1.2.6
- * @author Lautaro Angelico <http://lautaroangelico.com/>
- * @copyright (c) 2013-2025 Lautaro Angelico, All Rights Reserved
+ * @version 1.2.7
+ * @author Lautaro Angelico <https://lautaroangelico.com/>
+ * @copyright (c) 2013-2026 Lautaro Angelico, All Rights Reserved
  * 
  * Licensed under the MIT license
- * http://opensource.org/licenses/MIT
+ * https://opensource.org/licenses/MIT
  */
 
 # general
@@ -79,20 +79,17 @@ $lang['usercp_menu_txt_11'] = 'Buy Zen';
 # success
 $lang['success_1'] = 'Your account has been successfully created. You will be redirected to the Sign In form in 3 seconds.';
 $lang['success_2'] = 'Your account password has been successfully updated.';
-$lang['success_3'] = 'We have sent you an email address with a verification link. Once you verify your email address your password will be updated.';
-$lang['success_4'] = 'We have sent you an email address with your new password! (remember to also check your spam/junk folder)';
+$lang['success_3'] = 'We have sent you an email with a verification link. Once you verify your email address your password will be updated.';
+$lang['success_4'] = 'We have sent you an email with your new password!';
 $lang['success_5'] = 'Your account password has been successfully changed!';
-$lang['success_6'] = 'We have sent you an email with a special link to recover your account access. (remember to also check your spam/junk folder)';
-$lang['success_7'] = 'We have sent you an email address with your new password! (remember to also check your spam/junk folder)';
+$lang['success_6'] = 'We have sent you an email with a special link to recover your account access.';
+$lang['success_7'] = 'We have sent you an email with your new password!';
 $lang['success_8'] = 'Your character has been successfully reset.';
 $lang['success_9'] = 'Your character\'s stats have been successfully reset.';
 $lang['success_10'] = 'Your character\'s PK level has been successfully reset.';
-$lang['success_11'] = 'Your character been successfully moved to Lorencia\'s Bar.';
-$lang['success_12'] = 'Your character\'s master skill tree been successfully cleared.';
-$lang['success_13'] = '';
-$lang['success_14'] = '';
+$lang['success_11'] = 'Your character has been successfully moved to Lorencia\'s Bar.';
+$lang['success_12'] = 'Your character\'s master skill tree has been successfully cleared.';
 $lang['success_15'] = 'News successfully added!';
-$lang['success_16'] = '';
 $lang['success_17'] = 'Your character\'s level up points have been successfully added.';
 $lang['success_18'] = 'A verification link has been sent to your email to complete the registration.';
 $lang['success_19'] = 'Please check your current email address to proceed.';
@@ -101,7 +98,7 @@ $lang['success_21'] = 'Zen purchase successfully completed.';
 $lang['success_22'] = 'Thank you for contacting us, we will respond to your message shortly.';
 
 # errors
-$lang['error_1'] = 'The password you provided it\'s not correct, please try again.';
+$lang['error_1'] = 'The password you provided is not correct, please try again.';
 $lang['error_2'] = 'The username you entered does not exist.';
 $lang['error_3'] = 'You have reached the maximum number of login failures, therefore your account has been temporarily disabled to login to the website.';
 $lang['error_4'] = 'You must complete all the fields in the form.';
@@ -109,7 +106,7 @@ $lang['error_5'] = 'The username length must be 4 to 10 characters.';
 $lang['error_6'] = 'The username can only contain alpha-numeric characters.';
 $lang['error_7'] = 'The password length can be 4 to 32 characters.';
 $lang['error_8'] = 'The passwords did not match.';
-$lang['error_9'] = 'The email address you entered it\'s not valid.';
+$lang['error_9'] = 'The email address you entered is not valid.';
 $lang['error_10'] = 'The username you entered already exists.';
 $lang['error_11'] = 'The email address you entered already exists.';
 $lang['error_12'] = 'Your account\'s information could not be retrieved. Please try again later.';
@@ -145,7 +142,7 @@ $lang['error_41'] = 'Please complete all fields.';
 $lang['error_42'] = 'Title can have a minimum of 4 characters and maximum of 80.';
 $lang['error_43'] = 'The news content must be at least 4 characters long.';
 $lang['error_44'] = 'Could not load requested rankings.';
-$lang['error_45'] = 'Invalid Operation, redirecting to home.';
+$lang['error_45'] = 'Invalid operation, redirecting to home.';
 $lang['error_46'] = 'Your account has no characters.';
 $lang['error_47'] = 'This module is not currently enabled, please try again later.';
 $lang['error_48'] = 'Your request could not be processed because the email system is not active, please contact the support team.';
@@ -159,7 +156,7 @@ $lang['error_55'] = 'Buying the selected amount will exceed the zen limit allowe
 $lang['error_56'] = 'The name entered is not valid.';
 $lang['error_57'] = 'The message entered is not valid.';
 $lang['error_58'] = 'There are no ranking results to display.';
-$lang['error_59'] = 'Could not determine which classes require CMD stat. Please condifure character_cmd in your custom file.';
+$lang['error_59'] = 'Could not determine which classes require CMD stat. Please configure character_cmd in your custom file.';
 $lang['error_60'] = 'Could not load recaptcha library, please contact support.';
 $lang['error_61'] = 'No news articles have been published.';
 $lang['error_62'] = 'The language switching system is disabled.';
@@ -236,17 +233,17 @@ $lang['register_txt_2'] = 'Password:';
 $lang['register_txt_3'] = 'Confirm Password:';
 $lang['register_txt_4'] = 'Email Address:';
 $lang['register_txt_5'] = 'Create Account';
-$lang['register_txt_6'] = '%s to %s aplha-numeric characters long';
+$lang['register_txt_6'] = '%s to %s alpha-numeric characters long';
 $lang['register_txt_7'] = '%s to %s characters long';
-$lang['register_txt_8'] = 're-type your password';
-$lang['register_txt_9'] = 'please use a valid email address';
+$lang['register_txt_8'] = 'Re-type your password';
+$lang['register_txt_9'] = 'Please use a valid email address';
 $lang['register_txt_10'] = 'By registering you agree to our <br><a href="%s" target="_blank">Terms of Service</a>.';
 
 # login
 $lang['login_txt_1'] = 'Username:';
 $lang['login_txt_2'] = 'Password:';
 $lang['login_txt_3'] = 'Sign In';
-$lang['login_txt_4'] = 'forgot your password?';
+$lang['login_txt_4'] = 'Forgot your password?';
 $lang['login_txt_5'] = 'You have used %s out of %s login attempts. After all %s have been used, you will be unable to login for 15 minutes.';
 $lang['login_txt_6'] = 'Log Out';
 
@@ -264,7 +261,7 @@ $lang['myaccount_txt_10'] = 'Offline';
 $lang['myaccount_txt_12'] = 'Credits:';
 $lang['myaccount_txt_13'] = 'Date';
 $lang['myaccount_txt_14'] = 'recover';
-$lang['myaccount_txt_15'] = 'My Characters:';
+$lang['myaccount_txt_15'] = 'My Characters';
 $lang['myaccount_txt_16'] = 'Connection History';
 $lang['myaccount_txt_17'] = 'Server';
 $lang['myaccount_txt_18'] = 'IP';
@@ -278,6 +275,7 @@ $lang['vfc_txt_3'] = 'Vote Now!';
 # forgot password
 $lang['forgotpass_txt_1'] = 'Email Address:';
 $lang['forgotpass_txt_2'] = 'Send recovery email';
+$lang['forgotpass_txt_3'] = 'Username:';
 
 # downloads
 $lang['downloads_txt_1'] = 'File';
@@ -306,7 +304,6 @@ $lang['rankings_txt_5'] = 'Top Grand Resets';
 $lang['rankings_txt_6'] = 'Top Online';
 $lang['rankings_txt_7'] = 'Top Votes';
 $lang['rankings_txt_8'] = 'Top Gens';
-$lang['rankings_txt_9'] = '';
 $lang['rankings_txt_10'] = 'Character';
 $lang['rankings_txt_11'] = 'Class';
 $lang['rankings_txt_12'] = 'Level';
@@ -321,8 +318,6 @@ $lang['rankings_txt_20'] = 'Last Updated @';
 $lang['rankings_txt_21'] = 'Grand Resets';
 $lang['rankings_txt_22'] = 'Top Master Level';
 $lang['rankings_txt_23'] = 'Master Level';
-$lang['rankings_txt_24'] = '';
-$lang['rankings_txt_25'] = '';
 $lang['rankings_txt_26'] = 'Gens Duprian';
 $lang['rankings_txt_27'] = 'Gens Vanert';
 $lang['rankings_txt_28'] = 'Guild Logo';
@@ -351,6 +346,7 @@ $lang['rankings_filter_13'] = 'Light Wizards';
 $lang['rankings_filter_14'] = 'Lemuria Mages';
 $lang['rankings_filter_15'] = 'Illusion Knights';
 $lang['rankings_filter_16'] = 'Alchemists';
+$lang['rankings_filter_17'] = 'Crusaders';
 
 # clear pk
 $lang['clearpk_txt_1'] = 'Character';

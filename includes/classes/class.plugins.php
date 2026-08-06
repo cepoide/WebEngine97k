@@ -3,12 +3,12 @@
  * WebEngine CMS
  * https://webenginecms.org/
  * 
- * @version 1.2.6
- * @author Lautaro Angelico <http://lautaroangelico.com/>
- * @copyright (c) 2013-2025 Lautaro Angelico, All Rights Reserved
+ * @version 1.2.7
+ * @author Lautaro Angelico <https://lautaroangelico.com/>
+ * @copyright (c) 2013-2026 Lautaro Angelico, All Rights Reserved
  * 
  * Licensed under the MIT license
- * http://opensource.org/licenses/MIT
+ * https://opensource.org/licenses/MIT
  */
 
 class Plugins {
@@ -251,7 +251,7 @@ class Plugins {
 		curl_setopt($ch, CURLOPT_HEADER, false);
 
 		$result = curl_exec($ch);
-		curl_close($ch);
+		unset($ch);
 		
 		if(!$result) return;
 		$resultArray = json_decode($result, true);
@@ -296,7 +296,7 @@ class Plugins {
 		curl_setopt($ch, CURLOPT_HEADER, false);
 
 		$result = curl_exec($ch);
-		curl_close($ch);
+		unset($ch);
 		
 		if(!$result) return;
 		$resultArray = json_decode($result, true);

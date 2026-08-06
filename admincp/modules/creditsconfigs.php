@@ -3,15 +3,19 @@
  * WebEngine CMS
  * https://webenginecms.org/
  * 
- * @version 1.2.6
- * @author Lautaro Angelico <http://lautaroangelico.com/>
- * @copyright (c) 2013-2025 Lautaro Angelico, All Rights Reserved
+ * @version 1.2.7
+ * @author Lautaro Angelico <https://lautaroangelico.com/>
+ * @copyright (c) 2013-2026 Lautaro Angelico, All Rights Reserved
  * 
  * Licensed under the MIT license
- * http://opensource.org/licenses/MIT
+ * https://opensource.org/licenses/MIT
  */
 
 echo '<h1 class="page-header">Credit Configurations</h1>';
+
+if(config('allow_duplicate_emails', true) == true) {
+	message('warning', 'Your website configurations currently allow duplicate emails in the database, this directly impacts the usability of "Email" as user identifier in credit configurations. DO NOT use any credit configuration that utilizes an email address as user identifier!');
+}
 
 $creditSystem = new CreditSystem();
 

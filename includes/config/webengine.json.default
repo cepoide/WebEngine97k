@@ -45,5 +45,6 @@
     "server_info_masterexp": "250x",
     "server_info_drop": "50%",
     "maximum_online": "500",
-    "season_1_support": false
+    "season_1_support": false,
+    "allow_duplicate_emails": false
 }

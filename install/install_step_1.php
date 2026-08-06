@@ -3,12 +3,12 @@
  * WebEngine CMS
  * https://webenginecms.org/
  * 
- * @version 1.2.6
- * @author Lautaro Angelico <http://lautaroangelico.com/>
- * @copyright (c) 2013-2025 Lautaro Angelico, All Rights Reserved
+ * @version 1.2.7
+ * @author Lautaro Angelico <https://lautaroangelico.com/>
+ * @copyright (c) 2013-2026 Lautaro Angelico, All Rights Reserved
  * 
  * Licensed under the MIT license
- * http://opensource.org/licenses/MIT
+ * https://opensource.org/licenses/MIT
  */
 
 if(!defined('access') or !access or access != 'install') die();
@@ -29,10 +29,10 @@ if(isset($_POST['install_step_1_submit'])) {
 
 echo '<div class="list-group">';
 
-	$chk_1 = version_compare(PHP_VERSION, '8.1', '>=');
+	$chk_1 = version_compare(PHP_VERSION, '8.2', '>=');
 	$check_1 = ($chk_1 ? '<span class="label label-success">Ok</span>' : '<span class="label label-danger">Fix</span>');
 	echo '<div class="list-group-item">';
-		echo 'PHP 8.1 or higher';
+		echo 'PHP 8.2 or higher';
 		echo '<span class="pull-right">(PHP '.PHP_VERSION.') '.$check_1.'</span>';
 	echo '</div>';
 

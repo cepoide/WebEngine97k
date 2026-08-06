@@ -119,7 +119,7 @@ class PaypalIPN
         if ( ! ($res)) {
             $errno = curl_errno($ch);
             $errstr = curl_error($ch);
-            curl_close($ch);
+            unset($ch);
             throw new Exception("cURL error: [$errno] $errstr");
         }
 
@@ -129,7 +129,7 @@ class PaypalIPN
             throw new Exception("PayPal responded with http code $http_code");
         }
 
-        curl_close($ch);
+        unset($ch);
 
         // Check if PayPal verifies the IPN data, and if so, return true.
         if ($res == self::VALID) {

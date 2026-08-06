@@ -3,12 +3,12 @@
  * WebEngine CMS
  * https://webenginecms.org/
  * 
- * @version 1.2.6
- * @author Lautaro Angelico <http://lautaroangelico.com/>
- * @copyright (c) 2013-2025 Lautaro Angelico, All Rights Reserved
+ * @version 1.2.7
+ * @author Lautaro Angelico <https://lautaroangelico.com/>
+ * @copyright (c) 2013-2026 Lautaro Angelico, All Rights Reserved
  * 
  * Licensed under the MIT license
- * http://opensource.org/licenses/MIT
+ * https://opensource.org/licenses/MIT
  */
 
 class CreditSystem {
@@ -294,7 +294,7 @@ class CreditSystem {
 	
 	/**
 	 * setConfigDisplay
-	 * sets the config display in myaccoutn module for the new configuration
+	 * sets the config display in my account module for the new configuration
 	 * @param boolean $input
 	 */
 	public function setConfigDisplay($input) {

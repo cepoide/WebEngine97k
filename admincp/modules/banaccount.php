@@ -3,12 +3,12 @@
  * WebEngine CMS
  * https://webenginecms.org/
  * 
- * @version 1.2.6
- * @author Lautaro Angelico <http://lautaroangelico.com/>
- * @copyright (c) 2013-2025 Lautaro Angelico, All Rights Reserved
+ * @version 1.2.7
+ * @author Lautaro Angelico <https://lautaroangelico.com/>
+ * @copyright (c) 2013-2026 Lautaro Angelico, All Rights Reserved
  * 
  * Licensed under the MIT license
- * http://opensource.org/licenses/MIT
+ * https://opensource.org/licenses/MIT
  */
 ?>
 <h1 class="page-header">Ban Account</h1>
@@ -37,7 +37,7 @@
 			$userID = $common->retrieveUserID($_POST['ban_account']);
 			$accountData = $common->accountInformation($userID);
 			
-			// Check if aready banned
+			// Check if already banned
 			if($accountData[_CLMN_BLOCCODE_] == 1) throw new Exception("This account is already banned.");
 			
 			// Ban Type

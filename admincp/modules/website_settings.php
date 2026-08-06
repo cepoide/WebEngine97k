@@ -46,6 +46,7 @@ $allowedSettings = array(
 	'server_info_masterexp',
 	'server_info_drop',
 	'maximum_online',
+	'allow_duplicate_emails',
 );
 
 if(isset($_POST['settings_submit'])) {
@@ -188,6 +189,11 @@ if(isset($_POST['settings_submit'])) {
 		# maximum online
 		if(isset($_POST['maximum_online'])) if(!Validator::UnsignedNumber($_POST['maximum_online'])) throw new Exception('Invalid setting (maximum_online)');
 		$setting['maximum_online'] = $_POST['maximum_online'];
+		
+		# duplicate email address
+		if(!isset($_POST['allow_duplicate_emails'])) throw new Exception('Invalid setting (allow_duplicate_emails).');
+		if(!in_array($_POST['allow_duplicate_emails'], array(0, 1))) throw new Exception('Invalid setting (allow_duplicate_emails).');
+		$setting['allow_duplicate_emails'] = ($_POST['allow_duplicate_emails'] == 1 ? true : false);
 		
 		# webengine configs
 		$webengineConfigurations = webengineConfigs();
@@ -478,6 +484,27 @@ echo '<div class="col-md-12">';
 					echo '<div class="radio">';
 						echo '<label>';
 							echo '<input type="radio" name="guild_profiles" value="0" '.(!config('guild_profiles',true) ? 'checked' : null).'>';
+							echo 'Disabled';
+						echo '</label>';
+					echo '</div>';
+				echo '</td>';
+			echo '</tr>';
+			
+			echo '<tr>';
+				echo '<td>';
+					echo '<strong>Allow Duplicate Email Addresses</strong>';
+					echo '<p class="setting-description">Enables/disables users to register accounts with already used email addresses.<br><span style="color:red;">It is highly recommended to leave this feature disabled.<br>If enabled, DO NOT use email address as your identifier in any credit configuration!</span></p>';
+				echo '</td>';
+				echo '<td>';
+					echo '<div class="radio">';
+						echo '<label>';
+							echo '<input type="radio" name="allow_duplicate_emails" value="1" '.(config('allow_duplicate_emails',true) ? 'checked' : null).'>';
+							echo 'Enabled';
+						echo '</label>';
+					echo '</div>';
+					echo '<div class="radio">';
+						echo '<label>';
+							echo '<input type="radio" name="allow_duplicate_emails" value="0" '.(!config('allow_duplicate_emails',true) ? 'checked' : null).'>';
 							echo 'Disabled';
 						echo '</label>';
 					echo '</div>';

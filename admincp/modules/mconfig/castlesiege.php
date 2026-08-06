@@ -3,12 +3,12 @@
  * WebEngine CMS
  * https://webenginecms.org/
  * 
- * @version 1.2.6
- * @author Lautaro Angelico <http://lautaroangelico.com/>
- * @copyright (c) 2013-2025 Lautaro Angelico, All Rights Reserved
+ * @version 1.2.7
+ * @author Lautaro Angelico <https://lautaroangelico.com/>
+ * @copyright (c) 2013-2026 Lautaro Angelico, All Rights Reserved
  * 
  * Licensed under the MIT license
- * http://opensource.org/licenses/MIT
+ * https://opensource.org/licenses/MIT
  */
 
 echo '<h2>Castle Siege Settings</h2>';
@@ -144,7 +144,7 @@ if(!is_array($cfg)) throw new Exception('Error loading config file.');
 	
 	<table class="table table-striped table-bordered table-hover module_config_tables">
 		<tr>
-			<th>Active<br/><span>Enables or disabled the castle siege module.</span></th>
+			<th>Active<br/><span>Enables or disables the castle siege module.</span></th>
 			<td>
 				<?php enabledisableCheckboxes('setting_1', $cfg['active'], 'Enabled', 'Disabled'); ?>
 			</td>

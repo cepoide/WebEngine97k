@@ -3,9 +3,9 @@
  * WebEngine CMS
  * https://webenginecms.org/
  * 
- * @version 1.2.0
+ * @version 1.2.7
  * @author Lautaro Angelico <http://lautaroangelico.com/>
- * @copyright (c) 2013-2019 Lautaro Angelico, All Rights Reserved
+ * @copyright (c) 2013-2026 Lautaro Angelico, All Rights Reserved
  * 
  * Licensed under the MIT license
  * http://opensource.org/licenses/MIT
@@ -79,7 +79,7 @@ if(!@include_once('loader.php')) die('Could not load WebEngine CMS Installer.');
 		</div>
 
 		<footer class="footer">
-			<a href="https://webenginecms.org/" target="_blank">&copy; WebEngine CMS 2013-<?php echo date("Y"); ?></a>
+			<a href="https://webenginecms.com/" target="_blank">&copy; WebEngine CMS 2013-<?php echo date("Y"); ?></a>
 		</footer>
 
 	</div> <!-- /container -->

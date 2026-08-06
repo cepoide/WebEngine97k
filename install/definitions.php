@@ -3,9 +3,9 @@
  * WebEngine CMS
  * https://webenginecms.org/
  * 
- * @version 1.2.6
+ * @version 1.2.7
  * @author Lautaro Angelico <http://lautaroangelico.com/>
- * @copyright (c) 2013-2025 Lautaro Angelico, All Rights Reserved
+ * @copyright (c) 2013-2026 Lautaro Angelico, All Rights Reserved
  * 
  * Licensed under the MIT license
  * http://opensource.org/licenses/MIT
@@ -16,7 +16,7 @@ if(!defined('access') or !access or access != 'install') die();
 /**
  * INSTALLER_VERSION
  */
-define('INSTALLER_VERSION', '1.2.6');
+define('INSTALLER_VERSION', '1.2.7');
 
 /**
  * WEBENGINE_CONFIGURATION_FILE

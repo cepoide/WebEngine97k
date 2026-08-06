@@ -6,10 +6,10 @@
  =========================================================
  
  * Author Lautaro Angelico (https://lautaroangelico.com/)
- * Copyright (c) 2013-2020 Lautaro Angelico, All Rights Reserved
+ * Copyright (c) 2013-2026 Lautaro Angelico, All Rights Reserved
  
  * Licensed under the MIT license
- * http://opensource.org/licenses/MIT
+ * https://opensource.org/licenses/MIT
  
  =========================================================
  
@@ -18,13 +18,8 @@
 	background: #000 url('../img/castle_owner_bg.jpg') no-repeat;
 	background-size: cover;
 	color: #ffffff;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
 	border-radius: 10px;
-	-khtml-border-radius: 10px;
 	border: 1px solid #333;
-	-moz-box-shadow: 0 0 10px #555;
-	-webkit-box-shadow: 0 0 10px #555;
 	box-shadow: 0 0 10px #555;
 	padding: 20px;
 	text-shadow: 1px 1px 1px #000;
@@ -70,20 +65,14 @@
 	background: #000 url('../img/castle_owner_bg.jpg') no-repeat top right;
 	background-size: cover;
 	color: #cccccc;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
 	border-radius: 10px;
-	-khtml-border-radius: 10px;
 	border: 1px solid #333;
-	-moz-box-shadow: 0 0 10px #555;
-	-webkit-box-shadow: 0 0 10px #555;
 	box-shadow: 0 0 10px #555;
 	padding: 20px;
 	text-shadow: 1px 1px 1px #000;
 	transition: 0.3s;
 }
 .castle-owner-widget:hover {
-	-webkit-filter: brightness(120%);
 	filter: brightness(120%);
 }
 	.castle-owner-widget .panel-heading {
@@ -105,11 +94,7 @@
 		color: #ffffff;
 		background-color: transparent;
 		border-color: #ffffff;
-		-moz-transition: all .1s ease-in;
-		-o-transition: all .1s ease-in;
-		-webkit-transition: all .1s ease-in;
 		transition: all .1s ease-in;
-		-moz-border-radius: 0px;
 		border-radius: 0px;
 		text-shadow: none;
 	}

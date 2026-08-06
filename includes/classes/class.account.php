@@ -3,12 +3,12 @@
  * WebEngine CMS
  * https://webenginecms.org/
  * 
- * @version 1.2.6
- * @author Lautaro Angelico <http://lautaroangelico.com/>
- * @copyright (c) 2013-2025 Lautaro Angelico, All Rights Reserved
+ * @version 1.2.7
+ * @author Lautaro Angelico <https://lautaroangelico.com/>
+ * @copyright (c) 2013-2026 Lautaro Angelico, All Rights Reserved
  * 
  * Licensed under the MIT license
- * http://opensource.org/licenses/MIT
+ * https://opensource.org/licenses/MIT
  */
 
 class Account extends common {
@@ -46,7 +46,9 @@ class Account extends common {
 		
 		# check if username / email exists
 		if($this->userExists($username)) throw new Exception(lang('error_10',true));
-		if($this->emailExists($email)) throw new Exception(lang('error_11',true));
+		if(config('allow_duplicate_emails', true) == false) {
+			if($this->emailExists($email)) throw new Exception(lang('error_11',true));
+		}
 		
 		# WebEngine Email Verification System (EVS)
 		if($regCfg['verify_email']) {
@@ -271,7 +273,7 @@ class Account extends common {
 		
 	}
 	
-	public function passwordRecoveryProcess($user_email, $ip_address) {
+	public function passwordRecoveryProcess($user_email, $ip_address, $username='') {
 		if(!check_value($user_email)) throw new Exception(lang('error_30',true));
 		if(!check_value($ip_address)) throw new Exception(lang('error_30',true));
 		if(!Validator::Email($user_email)) throw new Exception(lang('error_30',true));
@@ -279,11 +281,27 @@ class Account extends common {
 		
 		if(!$this->emailExists($user_email)) throw new Exception(lang('error_30',true));
 		
-		$user_id = $this->retrieveUserIDbyEmail($user_email);
-		if(!check_value($user_id)) throw new Exception(lang('error_23',true));
+		if(config('allow_duplicate_emails', true) == true) {
+			
+			// duplicate emails allowed
+			if(!check_value($username)) throw new Exception(lang('error_21',true));
+			
+			$user_id = $this->retrieveUserID($username);
+			if(!check_value($user_id)) throw new Exception(lang('error_23',true));
+			
+		} else {
+			
+			// duplicate emails not allowed
+			$user_id = $this->retrieveUserIDbyEmail($user_email);
+			if(!check_value($user_id)) throw new Exception(lang('error_23',true));
+			
+		}
 		
 		$accountData = $this->accountInformation($user_id);
 		if(!is_array($accountData)) throw new Exception(lang('error_23',true));
+		
+		// Check email matches (necessary for duplicate email config)
+		if(strtolower($accountData[_CLMN_EMAIL_]) !== strtolower($user_email)) throw new Exception(lang('error_23',true));
 		
 		# Account Recovery Code
 		$arc = $this->generateAccountRecoveryCode($accountData[_CLMN_MEMBID_], $accountData[_CLMN_USERNM_]);

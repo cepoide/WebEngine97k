@@ -3,12 +3,12 @@
  * WebEngine CMS
  * https://webenginecms.org/
  * 
- * @version 1.2.6
- * @author Lautaro Angelico <http://lautaroangelico.com/>
- * @copyright (c) 2013-2025 Lautaro Angelico, All Rights Reserved
+ * @version 1.2.7
+ * @author Lautaro Angelico <https://lautaroangelico.com/>
+ * @copyright (c) 2013-2026 Lautaro Angelico, All Rights Reserved
  * 
  * Licensed under the MIT license
- * http://opensource.org/licenses/MIT
+ * https://opensource.org/licenses/MIT
  */
 
 echo '<h1 class="page-header">Edit News Translation</h1>';
@@ -28,7 +28,7 @@ try {
 			$News->setLanguage($_POST['news_language']);
 			$News->setTitle($_POST['news_title']);
 			$News->setContent($_POST['news_content']);
-			$News->updateNewsTransation();
+			$News->updateNewsTranslation();
 			redirect(1, 'admincp/?module=managenews');
 		} catch(Exception $ex) {
 			message('error', $ex->getMessage());

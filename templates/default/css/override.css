@@ -4,8 +4,13 @@
  * WebEngine CMS
  * https://webenginecms.org/
  =========================================================
+ 
+ * Author Lautaro Angelico (https://lautaroangelico.com/)
+ * Copyright (c) 2013-2026 Lautaro Angelico, All Rights Reserved
+ 
  * Licensed under the MIT license
- * http://opensource.org/licenses/MIT
+ * https://opensource.org/licenses/MIT
+ 
  =========================================================
  
 */
@@ -16,6 +21,7 @@
 a:focus, a:hover {
     color: inherit !important;
     text-decoration: none !important;
+	outline: none !important;
 }
 
 .form-control {
@@ -41,30 +47,26 @@ a:focus, a:hover {
 }
 
 .thumbnail {
-    background-color: #f1f1f1;
-    border: 1px solid #e3e3e3;
+    background-color: var(--webenginecolor27);
+    border: 1px solid var(--webenginecolor16);
 }
 a.thumbnail:hover,
 a.thumbnail:focus,
 a.thumbnail.active {
-  border-color: #ff0000;
+  border-color: var(--webenginecolor1);
 }
 
 .btn-primary {
-    color: #3f6588;
-    background-color: transparent;
-	border-color: #3f6588;
-	-moz-transition: all .1s ease-in;
-    -o-transition: all .1s ease-in;
-    -webkit-transition: all .1s ease-in;
+    color: var(--webenginecolor9);
+    background-color: var(--webenginecolor8);
+	border-color: var(--webenginecolor10);
     transition: all .1s ease-in;
-	-moz-border-radius: 0px;
-	border-radius: 0px;
+	border-radius: 3px;
 }
 .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
-    color: #fff !important;
-    background-color: #3f6588 !important;
-	border-color: #3f6588 !important;
+    color: var(--webenginecolor12) !important;
+    background-color: var(--webenginecolor11) !important;
+	border-color: var(--webenginecolor13) !important;
 }
 
 .form-horizontal .control-label {

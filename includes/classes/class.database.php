@@ -3,12 +3,12 @@
  * WebEngine CMS
  * https://webenginecms.org/
  * 
- * @version 1.2.6
- * @author Lautaro Angelico <http://lautaroangelico.com/>
- * @copyright (c) 2013-2025 Lautaro Angelico, All Rights Reserved
+ * @version 1.2.7
+ * @author Lautaro Angelico <https://lautaroangelico.com/>
+ * @copyright (c) 2013-2026 Lautaro Angelico, All Rights Reserved
  * 
  * Licensed under the MIT license
- * http://opensource.org/licenses/MIT
+ * https://opensource.org/licenses/MIT
  */
 
 class dB {
@@ -55,7 +55,7 @@ class dB {
         }
 		$query = $this->db->prepare($sql);
 		if (!$query) {
-			$this->error = $this->trow_error();
+			$this->error = $this->throw_error();
 			$query->closeCursor();
 			return false;
 		} else {
@@ -63,7 +63,7 @@ class dB {
 				$query->closeCursor();
 				return true;
 			} else {
-				$this->error = $this->trow_error($query);
+				$this->error = $this->throw_error($query);
 				return false;
 			}
 		}
@@ -79,7 +79,7 @@ class dB {
         }
 		$query = $this->db->prepare($sql);
 		if (!$query) {
-			$this->error = $this->trow_error();
+			$this->error = $this->throw_error();
 			$query->closeCursor();
 			return false;
 		} else {
@@ -88,7 +88,7 @@ class dB {
 				$query->closeCursor();
 				return (check_value($result)) ? $result : NULL;
 			} else {
-				$this->error = $this->trow_error($query);
+				$this->error = $this->throw_error($query);
 				return false;
 			}
 		}
@@ -99,7 +99,7 @@ class dB {
 		return (isset($result[0])) ? $result[0] : NULL;
 	}
 	
-	private function trow_error($state='') {
+	private function throw_error($state='') {
 		if(!check_value($state)) {
 			$error = $this->db->errorInfo();
 		} else {

@@ -3,12 +3,12 @@
  * WebEngine CMS
  * https://webenginecms.org/
  * 
- * @version 1.2.5
- * @author Lautaro Angelico <http://lautaroangelico.com/>
- * @copyright (c) 2013-2023 Lautaro Angelico, All Rights Reserved
+ * @version 1.2.7
+ * @author Lautaro Angelico <https://lautaroangelico.com/>
+ * @copyright (c) 2013-2026 Lautaro Angelico, All Rights Reserved
  * 
  * Licensed under the MIT license
- * http://opensource.org/licenses/MIT
+ * https://opensource.org/licenses/MIT
  */
 
 if(isLoggedIn()) redirect();
@@ -34,8 +34,11 @@ try {
 		# form submit
 		if(isset($_POST['webengineEmail_submit'])) {
 			try {
+				
+				$accountUsername = config('allow_duplicate_emails', true) == true ? $_POST['webengineUsername_current'] : '';
+				
 				$Account = new Account();
-				$Account->passwordRecoveryProcess($_POST['webengineEmail_current'], $_SERVER['REMOTE_ADDR']);
+				$Account->passwordRecoveryProcess($_POST['webengineEmail_current'], $_SERVER['REMOTE_ADDR'], $accountUsername);
 			} catch (Exception $ex) {
 				message('error', $ex->getMessage());
 			}
@@ -43,12 +46,23 @@ try {
 		
 		echo '<div class="col-xs-8 col-xs-offset-2" style="margin-top:30px;">';
 			echo '<form class="form-horizontal" action="" method="post">';
+			
 				echo '<div class="form-group">';
 					echo '<label for="webengineEmail" class="col-sm-4 control-label">'.lang('forgotpass_txt_1',true).'</label>';
 					echo '<div class="col-sm-8">';
 						echo '<input type="text" class="form-control" id="webengineEmail" name="webengineEmail_current" required>';
 					echo '</div>';
 				echo '</div>';
+				
+				if(config('allow_duplicate_emails', true) == true) {
+					echo '<div class="form-group">';
+						echo '<label for="webengineUsername" class="col-sm-4 control-label">'.lang('forgotpass_txt_3',true).'</label>';
+						echo '<div class="col-sm-8">';
+							echo '<input type="text" class="form-control" id="webengineUsername" name="webengineUsername_current" required>';
+						echo '</div>';
+					echo '</div>';
+				}
+				
 				echo '<div class="form-group">';
 					echo '<div class="col-sm-offset-4 col-sm-8">';
 						echo '<button type="submit" name="webengineEmail_submit" value="submit" class="btn btn-primary">'.lang('forgotpass_txt_2',true).'</button>';

@@ -3,12 +3,12 @@
  * WebEngine CMS
  * https://webenginecms.org/
  * 
- * @version 1.2.6
- * @author Lautaro Angelico <http://lautaroangelico.com/>
- * @copyright (c) 2013-2025 Lautaro Angelico, All Rights Reserved
+ * @version 1.2.7
+ * @author Lautaro Angelico <https://lautaroangelico.com/>
+ * @copyright (c) 2013-2026 Lautaro Angelico, All Rights Reserved
  * 
  * Licensed under the MIT license
- * http://opensource.org/licenses/MIT
+ * https://opensource.org/licenses/MIT
  */
 
 class News {
@@ -336,7 +336,7 @@ class News {
 		return $result;
 	}
 	
-	public function addNewsTransation() {
+	public function addNewsTranslation() {
 		$this->db = Connection::Database('Me_MuOnline');
 		
 		if(!check_value($this->_id)) throw new Exception('The provided news id is not valid.');
@@ -366,7 +366,7 @@ class News {
 		}
 	}
 	
-	public function updateNewsTransation() {
+	public function updateNewsTranslation() {
 		$this->db = Connection::Database('Me_MuOnline');
 		
 		if(!check_value($this->_id)) throw new Exception('The provided news id is not valid.');

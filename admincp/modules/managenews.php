@@ -3,12 +3,12 @@
  * WebEngine CMS
  * https://webenginecms.org/
  * 
- * @version 1.2.6
- * @author Lautaro Angelico <http://lautaroangelico.com/>
- * @copyright (c) 2013-2025 Lautaro Angelico, All Rights Reserved
+ * @version 1.2.7
+ * @author Lautaro Angelico <https://lautaroangelico.com/>
+ * @copyright (c) 2013-2026 Lautaro Angelico, All Rights Reserved
  * 
  * Licensed under the MIT license
- * http://opensource.org/licenses/MIT
+ * https://opensource.org/licenses/MIT
  */
 ?>
 <h1 class="page-header">Manage News</h1>
@@ -17,7 +17,7 @@ $News = new News();
 
 if($News->isNewsDirWritable()) {
 
-	# News detele
+	# News delete
 	if(isset($_REQUEST['delete'])) {
 		$deleteNews = $News->removeNews($_REQUEST['delete']);
 		$News->cacheNews();

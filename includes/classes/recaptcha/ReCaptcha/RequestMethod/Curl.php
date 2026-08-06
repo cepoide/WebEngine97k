@@ -76,6 +76,6 @@ class Curl
      */
     public function close($ch)
     {
-        curl_close($ch);
+        unset($ch);
     }
 }
